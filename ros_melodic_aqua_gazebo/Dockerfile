@@ -1,29 +1,9 @@
-<<<<<<< HEAD
-FROM juancamilog/ros_melodic_gazebo_conda:with_cuda
-
-# install pytorch and tf
-RUN conda install tensorflow-gpu=1.15 pytorch-gpu pandas \
-    && conda clean -a -y
-
-#install dependencies
-RUN apt-get update && apt-get install -y \ 
-    libgl1-mesa-dev libglew-dev libegl1-mesa-dev \
-    libwayland-dev libxkbcommon-dev wayland-protocols \
-    ffmpeg libavcodec-dev libavutil-dev libavformat-dev \
-    libswscale-dev libavdevice-dev libjpeg-dev libpng-dev \
-    libtiff5-dev libopenexr-dev terminator vim \
-    libsuitesparse-dev libeigen3-dev libboost-all-dev libopencv-dev \
-    ros-$ROS_DISTRO-robot-localization ros-$ROS_DISTRO-rviz \
-    ros-$ROS_DISTRO-joystick-drivers ros-$ROS_DISTRO-tf-conversions \
-    ros-$ROS_DISTRO-pcl-ros ros-$ROS_DISTRO-eigen-conversions \
-=======
 FROM juancamilog/ros_melodic_gazebo:with_cuda
 
 #install dependencies
 RUN apt-get update && apt-get install -y \ 
     libsuitesparse-dev libeigen3-dev libboost-all-dev\
     && apt-get clean && apt-get autoclean \
->>>>>>> 197b4f3... removed conda
     && rm -rf /var/lib/apt/lists/*
 
 RUN pip install pandas matplotlib

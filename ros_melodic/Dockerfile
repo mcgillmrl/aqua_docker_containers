@@ -1,5 +1,5 @@
 #  This file was created by merging the ros:lunar-ros-base-xenial and continuumio:miniconda images
-FROM nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04
+FROM nvidia/cuda:10.0-cudnn7-devel-ubuntu18.04
 
 # setup environment
 ENV LANG C.UTF-8
